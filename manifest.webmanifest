@@ -1,0 +1,14 @@
+{
+  "name":"منصة الفحص والتدقيق — SOA",
+  "short_name":"SOA Audit",
+  "description":"منصة موحدة لإدارة أنشطة الفحص والتدقيق",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f4f7fa",
+  "theme_color":"#083b72",
+  "lang":"ar",
+  "dir":"rtl",
+  "icons":[
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
