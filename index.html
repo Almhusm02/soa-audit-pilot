@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#083b72">
+  <meta name="description" content="منصة موحدة لإدارة أنشطة الفحص والتدقيق ومتابعة حالات عدم المطابقة">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>منصة الفحص والتدقيق | SOA</title>
+</head>
+<body>
+  <div class="public-banner">نموذج تجريبي (Pilot) — بيانات وهمية وليست للاستخدام التشغيلي</div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span></div>
+        <div><strong>قطاع النقل</strong><small>الفحص والتدقيق — SOA</small></div>
+      </div>
+      <nav aria-label="القائمة الرئيسية">
+        <button class="nav-item active" data-view="dashboard"><span>⌂</span> لوحة المؤشرات</button>
+        <button class="nav-item" data-view="activities"><span>▤</span> سجل الأنشطة</button>
+        <button class="nav-item" data-view="ncr"><span>⚠</span> حالات عدم المطابقة</button>
+        <button class="nav-item" data-view="reports"><span>◫</span> التقارير</button>
+        <button class="nav-item admin-only" data-view="users"><span>♙</span> المستخدمون والصلاحيات</button>
+        <button class="nav-item reviewer-only" data-view="audit"><span>◎</span> سجل التدقيق</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sync-pill" id="syncStatus"><i></i><span>مصدر البيانات</span><b>جارٍ التحقق…</b></div>
+        <small>بيئة نموذج أولي • لا تحتوي بيانات حقيقية</small>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+        <div class="page-title"><span class="eyebrow">منصة موحدة للويب والجوال</span><h1 id="pageTitle">لوحة المؤشرات</h1></div>
+        <div class="top-actions">
+          <button class="icon-btn" id="themeBtn" aria-label="تغيير المظهر">◐</button>
+          <button class="lang-btn" id="langBtn">EN</button>
+          <button class="profile" id="profileBtn"><span id="profileInitials">AD</span><div><strong id="profileName">مدير تجريبي</strong><small id="profileRole">مسؤول النظام</small></div></button>
+        </div>
+      </header>
+
+      <section class="content view active" id="dashboardView">
+        <div class="hero">
+          <div><span class="live"><i></i> محدث تلقائياً</span><h2>مرحباً بك</h2><p>نظرة تجريبية على أداء أنشطة الفحص والتدقيق.</p></div>
+          <button class="primary" data-open-form>＋ إضافة نشاط جديد</button>
+        </div>
+
+        <div class="kpi-grid">
+          <article class="kpi"><div class="kpi-icon blue">✓</div><div><span>إجمالي الزيارات</span><strong data-count="1708">0</strong><small class="up">↑ 8.4% عن الشهر الماضي</small></div></article>
+          <article class="kpi"><div class="kpi-icon green">●</div><div><span>الزيارات المكتملة</span><strong data-count="1384">0</strong><small>نسبة الإنجاز 81%</small></div></article>
+          <article class="kpi"><div class="kpi-icon orange">◷</div><div><span>قيد التنفيذ</span><strong data-count="247">0</strong><small>14 نشاطاً هذا الأسبوع</small></div></article>
+          <article class="kpi"><div class="kpi-icon red">!</div><div><span>NCR مفتوحة</span><strong data-count="77">0</strong><small class="danger">12 تجاوزت تاريخ الإغلاق</small></div></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel chart-panel">
+            <div class="panel-head"><div><h3>أداء الزيارات</h3><p>المخطط مقابل المنجز خلال آخر 6 أشهر</p></div><select aria-label="الفترة"><option>آخر 6 أشهر</option><option>هذه السنة</option></select></div>
+            <div class="chart" aria-label="رسم بياني للأداء">
+              <div class="y-labels"><span>400</span><span>300</span><span>200</span><span>100</span><span>0</span></div>
+              <div class="bars" id="chartBars"></div>
+            </div>
+            <div class="legend"><span><i class="planned"></i> المخطط</span><span><i class="done"></i> المنجز</span></div>
+          </article>
+          <article class="panel status-panel">
+            <div class="panel-head"><div><h3>حالة الأنشطة</h3><p>توزيع جميع السجلات</p></div><button class="dots">•••</button></div>
+            <div class="donut-wrap"><div class="donut"><div><strong>81%</strong><span>إنجاز</span></div></div></div>
+            <div class="status-list"><div><span><i class="green-dot"></i> مكتمل</span><b>1,384</b></div><div><span><i class="orange-dot"></i> قيد التنفيذ</span><b>247</b></div><div><span><i class="gray-dot"></i> مخطط</span><b>77</b></div></div>
+          </article>
+        </div>
+
+        <article class="panel recent-panel">
+          <div class="panel-head"><div><h3>أحدث الأنشطة</h3><p>آخر التحديثات التجريبية في سجل الأنشطة</p></div><button class="text-btn" data-view-link="activities">عرض الكل ←</button></div>
+          <div class="table-wrap"><table><thead><tr><th>رقم الفحص</th><th>الموقع / الخط</th><th>نوع الصيانة</th><th>تاريخ البداية</th><th>الحالة</th><th>المفتش</th></tr></thead><tbody id="recentRows"></tbody></table></div>
+        </article>
+      </section>
+
+      <section class="content view" id="activitiesView">
+        <div class="section-head"><div><h2>سجل الأنشطة</h2><p>إدارة زيارات الفحص والصيانة ومتابعتها.</p></div><button class="primary" data-open-form>＋ إضافة نشاط</button></div>
+        <div class="toolbar"><label class="search">⌕<input id="activitySearch" placeholder="ابحث برقم الفحص، الموقع أو المفتش"></label><select id="statusFilter"><option value="">كل الحالات</option><option>مكتمل</option><option>قيد التنفيذ</option><option>مخطط</option></select><button class="secondary" id="exportBtn">⇩ تصدير CSV</button></div>
+        <article class="panel"><div class="table-wrap"><table><thead><tr><th>رقم الفحص</th><th>الموقع / الخط</th><th>نوع الصيانة</th><th>البداية</th><th>النهاية</th><th>الحالة</th><th>المفتش</th></tr></thead><tbody id="activityRows"></tbody></table></div><div class="table-footer" id="activityCount"></div></article>
+      </section>
+
+      <section class="content view" id="ncrView">
+        <div class="section-head"><div><h2>حالات عدم المطابقة</h2><p>متابعة الملاحظات والإجراءات التصحيحية حتى الإغلاق.</p></div><button class="primary" id="newNcrBtn">＋ تسجيل NCR</button></div>
+        <div class="kpi-grid compact"><article class="kpi"><div><span>إجمالي الحالات</span><strong>1644</strong></div></article><article class="kpi"><div><span>مفتوحة</span><strong class="red-text">77</strong></div></article><article class="kpi"><div><span>أغلقت ضمن المدة</span><strong class="green-text">94%</strong></div></article></div>
+        <article class="panel"><div class="table-wrap"><table><thead><tr><th>رقم NCR</th><th>الوصف</th><th>التصنيف</th><th>تاريخ الاستحقاق</th><th>الحالة</th></tr></thead><tbody><tr><td><b>NCR-SOA-2026-014</b></td><td>نتيجة تجريبية — فحص إجراءات الصيانة</td><td>متوسط</td><td>24 أغسطس 2026</td><td><span class="badge progress">قيد المعالجة</span></td></tr><tr><td><b>NCR-SOA-2026-013</b></td><td>نتيجة تجريبية — توثيق أمر العمل</td><td>منخفض</td><td>18 أغسطس 2026</td><td><span class="badge done">مغلق</span></td></tr></tbody></table></div></article>
+      </section>
+
+      <section class="content view" id="reportsView"><div class="section-head"><div><h2>التقارير</h2><p>تقارير تشغيلية جاهزة للطباعة والعرض على الإدارة.</p></div></div><div class="report-grid"><button class="report-card"><span>▥</span><strong>تقرير الأداء الشهري</strong><small>المخطط والمنجز ومؤشرات الالتزام</small></button><button class="report-card"><span>⚠</span><strong>تقرير NCR</strong><small>المفتوح والمتأخر والإجراءات التصحيحية</small></button><button class="report-card"><span>◫</span><strong>تقرير المحطات</strong><small>نسب التغطية وحالة التدقيق حسب المنطقة</small></button></div></section>
+      <section class="content view" id="usersView"><div class="section-head"><div><h2>المستخدمون والصلاحيات</h2><p>عرض تجريبي للأدوار؛ الإدارة الفعلية ستكون من Microsoft Entra.</p></div></div><article class="panel"><div class="table-wrap"><table><thead><tr><th>المستخدم</th><th>الدور</th><th>الصلاحيات</th><th>الحالة</th></tr></thead><tbody id="userRows"></tbody></table></div></article></section>
+      <section class="content view" id="auditView"><div class="section-head"><div><h2>سجل التدقيق</h2><p>تتبع العمليات داخل النموذج: المستخدم، الحدث والوقت.</p></div><button class="secondary" id="exportAuditBtn">⇩ تصدير السجل</button></div><article class="panel"><div class="table-wrap"><table><thead><tr><th>الوقت</th><th>المستخدم</th><th>العملية</th><th>معرّف السجل</th></tr></thead><tbody id="auditRows"></tbody></table></div></article></section>
+    </main>
+  </div>
+
+  <div class="modal" id="activityModal" aria-hidden="true"><div class="modal-card"><div class="modal-head"><div><h2>إضافة نشاط فحص</h2><p>سيحفظ محلياً في هذا النموذج حتى تفعيل مزامنة Microsoft.</p></div><button class="close-btn" data-close>×</button></div><form id="activityForm"><div class="form-grid"><label>رقم الفحص<input name="id" required placeholder="SOA-2026-001"></label><label>الموقع / الخط<input name="location" required placeholder="اسم المحطة أو الخط"></label><label>نوع الصيانة<select name="type"><option>وقائية</option><option>تصحيحية</option><option>طارئة</option></select></label><label>اسم المفتش<input name="auditor" required></label><label>تاريخ البداية<input type="date" name="start" required></label><label>تاريخ النهاية<input type="date" name="end" required></label><label>الحالة<select name="status"><option>مخطط</option><option>قيد التنفيذ</option><option>مكتمل</option></select></label><label class="full">ملاحظات<textarea name="remarks" rows="3"></textarea></label></div><div class="form-actions"><button type="button" class="secondary" data-close>إلغاء</button><button class="primary" type="submit">حفظ النشاط</button></div></form></div></div>
+  <div class="login-screen" id="loginScreen"><div class="login-card"><div class="brand-mark" aria-hidden="true"><span></span></div><span class="pilot-tag">بيئة تجريبية آمنة</span><h1>منصة الفحص والتدقيق</h1><p>اختر دوراً لمعاينة الصلاحيات. سيستبدل هذا الدخول بـ Microsoft عند تفعيل البيئة المؤسسية.</p><label>الدور التجريبي<select id="demoRole"><option value="admin">مسؤول النظام</option><option value="reviewer">مراجع / مشرف</option><option value="editor">موظف إدخال</option><option value="viewer">قارئ فقط</option></select></label><button class="primary" id="demoLoginBtn">دخول إلى المنصة</button><small>لا تستخدم بيانات دخول أو معلومات شركة حقيقية.</small></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="config.js"></script>
+  <script src="data-service.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
